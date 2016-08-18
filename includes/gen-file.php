@@ -1,33 +1,6 @@
 <?php
 
 
-function getCourses(){
-		$myposts = get_posts(array(
-			'showposts' => -1,
-			'post_type' => 'course',
-			'orderby'   => 'ID',
-			'order'     => 'ASC',
-			)); 
-	
-	$courses = array();
-	foreach($myposts as $course){
-		$c = array();
-		$ID = $course->ID;
-		$title = $course->post_title;
-		$c[] = $ID;
-		$c[] = $title;
-		
-		$courses[] = $c;
-		}
-	
-	$form = '<select name="course">';
-foreach($courses as $course){
-    $form .='<option value="'.$course[0].'">'.$course[1].'</option>';
-}
-$form .= '</select>';
-return $form;
-	}
-
 
 
 function checkFile($files){
