@@ -1,7 +1,12 @@
 <?php
+function wp_mail()
+{
+    // Do nothing!
+}
+
 error_reporting(0);
 //include_once('../wp-includes/option.php');
-require_once('../../../../wp-config.php');   
+require_once('../../../../wp-config.php');
 include 'gen-file.php';
 
 //Posted files
@@ -28,13 +33,10 @@ $students = AddAsStudents($Users,$ID);
 
 convert_to_csv($Users);
 	}else{
-		
+
 
 
 $url = get_site_url().'/wp-admin/options-general.php?page=cpim';
 header( 'Location:'.$url ) ;
 
 		}
-
-
-
